@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: lightgrey;
+  color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.gap-top {
+  margin-top: 15px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.panel,
+.app-header {
+  background: white;
+  border: 1px solid silver;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: darkslategrey;
+}
+
+.navigation-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: slategrey;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: whitesmoke;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.nav-btn:hover {
+  background-color: silver;
+  color: darkslategrey;
+}
+
+.panel {
+  padding: 25px;
+}
+
+.panel-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: darkslategrey;
+  margin-bottom: 20px;
+  border-bottom: 2px solid whitesmoke;
+  padding-bottom: 8px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid silver;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  color: darkslategrey;
+}
+
+input:focus, 
+select:focus {
+  border-color: royalblue;
+  outline: none;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+  color: slategrey;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: royalblue;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: darkblue;
+}
+
+.metadata-banner {
+  display: flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px dashed silver;
+  font-size: 14px;
+  color: darkslategrey;
+  gap: 10px;
+}
+
+.metadata-banner div {
+  flex: 1;
+  text-align: center;
+}
+
+.metadata-banner div:not(:last-child) {
+  border-right: 1px solid silver;
+}
+
+.metadata-banner span {
+  font-weight: 700;
+  color: royalblue;
+  margin-left: 4px;
+}
+
+.timetable-grid {
+  overflow-x: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 1px solid silver;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  text-align: left;
+}
+
+th, 
+td {
+  padding: 14px;
+  border: 1px solid silver;
+  font-size: 13px;
+  vertical-align: top;
+  min-width: 150px;
+}
+
+th {
+  background-color: whitesmoke;
+  color: slategrey;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: snow;
+}
+
+.note {
+  font-size: 13px;
+  color: slategrey;
+  text-align: center;
+  padding: 30px;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .metadata-banner {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .metadata-banner div {
+    text-align: left;
+  }
+  .metadata-banner div:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid silver;
+    padding-bottom: 8px;
+  }
+}
+
+.filter-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.filter-grid > div {
+    flex: 1;
+    min-width: 150px;
+}

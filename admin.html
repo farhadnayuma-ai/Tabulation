@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Control</title>
+    <link rel="stylesheet" href="adminstyle.css">
+</head>
+<body>
+
+    <div class="container" id="auth-container">
+        
+        <div id="login-section">
+            <div class="navigation-links">
+            <a href="tabhome.html" class="nav-btn">⬅ Back to Home</a>
+            </div>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <input type="text"  name="username" placeholder="Username" required>
+                <input type="password"  name="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="toggleForms()">Create one</a></p>
+        </div>
+
+        
+        <div id="register-section" class="hidden">
+            <h2>Create Admin Account</h2>
+            <form id="registerForm">
+                <input type="text" id="registerUsername"  name="username" placeholder="Choose Username" required>
+                <input type="password" id="registerPassword"  name="password" placeholder="Choose Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="toggleForms()">Log in</a></p>
+        </div>
+    </div>
+
+    <div class="app-container hidden" id="dashboard-section">
+        <header class="app-header">
+            <div class="logo">📅 Tabulation – Admin Hub</div>
+            <div class="navigation-links">
+                <span id="adminGreeting" style="font-size:13px; font-weight:600; color:darkslategrey;"></span>
+                <a href="lecturer.html" class="nav-btn">👩‍🏫 Lecturer Portal</a>
+                <a href="student.html" class="nav-btn">🎓 Student Portal</a>
+                <button onclick="handleLogout()" class="btn-logout">Logout</button> 
+            </div>
+        </header>
+
+        <main class="stack">
+            <section class="panel">
+                <div class="panel-title">⚙️ 1. Hours & Rooms Configuration</div>
+                <div class="form-row">
+                    <label>Start Hour <input type="time" id="cfgStart" value="08:00"></label>
+                    <label>End Hour <input type="time" id="cfgEnd" value="17:00"></label>
+                    <label>Total Rooms <input type="number" id="cfgRooms" min="1" value="3"></label>
+                </div>
+                <div class="form-row">
+                    <label>Schedule Mode: 
+                        <select id="mMode">
+                            <option value="weekday">Weekday Schedule</option>
+                            <option value="weekend">Weekend Schedule</option>
+                        </select>
+                    </label>
+                </div>
+            </section>
+
+         <section class="panel">
+                <div class="panel-title">📚 2. Program & Module Entry</div>
+                <div class="form-row">
+                    <input id="mProg" placeholder="Program (e.g. ICT)">
+                    <input id="mYear" type="number" placeholder="Year (e.g. 1)" min="1" max="5">
+                    <select id="mSem">
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <input id="mName" placeholder="Module Name (e.g. Business Law)">
+                    <input id="mId" placeholder="Module ID (e.g. S1202)">
+                </div>
+                <div class="form-row">
+                    <input id="mLec" placeholder="Lecturer Name">
+                    <input id="mFac" placeholder="Faculty (e.g. Business)">
+                </div>
+                <button class="btn btn-success" id="addModBtn">➕ Add Module to List</button>
+                <div id="modList" class="gap-top"></div>
+            </section>
+            <section class="panel">
+                <div class="panel-title">🔒 3. Public Security & Access Controls</div>
+                <div class="control-box">
+                    <h4>🎫 Public Access Pass</h4>
+                    <p class="note">Generates a unique pass string used by the general public to view this timetable.</p>
+                    <div class="form-row">
+                        <button class="btn btn-primary" id="btnGenPass">Generate Access Pass</button>
+                        <input id="accessPassOut" readonly placeholder="No pass created yet">
+                    </div>
+                </div>
+                <div class="control-box gap-top">
+                    <h4>🔑 Public Modify Key (Optional)</h4>
+                    <p class="note">Share this key to allow designated public users or lecturers to adjust the entries.</p>
+                    <div class="form-row">
+                        <button class="btn btn-share" id="btnGenKey">Create Modify Key</button>
+                        <input id="modifyKeyOut" readonly placeholder="No modification key active">
+                    </div>
+                </div>
+
+                <div class="action-group gap-top border-top">
+                    <button class="btn btn-primary full" id="btnGenMaster">✨ Generate Master Timetable</button>
+                </div>
+            </section>
+            <section class="panel" id="ttPanel">
+                <div class="panel-title">📊 Live Master Timetable Preview</div>
+                <div class="timetable-grid">
+                    <table id="timetableTable"></table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

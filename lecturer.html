@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabulation – Lecturer Portal</title>
+    <link rel="stylesheet" href="lecturer.css">
+</head>
+<body>
+<div class="app-container">
+    <header class="app-header">
+        <div class="logo">👩‍🏫 Tabulation – Lecturer Portal</div>
+        <div class="navigation-links">
+            <a href="tabhome.html" class="nav-btn">⬅ Back to Home</a>
+            <a href="admin.html" class="nav-btn">🛡️ Admin Hub</a>
+            <a href="student.html" class="nav-btn">🎓 Student Portal</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="panel">
+            <div class="panel-title">🎫 Enter Public Access Pass</div>
+            <p class="instruction-text">Enter the Public Access Pass provided by your Admin to view the timetable.</p>
+            <div class="form-row">
+                <input type="text" id="inputAccessPass" placeholder="Paste Public Access Pass here (e.g. PASS-XXXXX)...">
+                <button class="btn btn-share" id="btnLoadPass">Load Timetable</button>
+            </div>
+            <p id="passStatus" class="note gap-top"></p>
+        </section>
+
+        <section class="panel hidden" id="modifyPanel">
+            <div class="panel-title">🔑 Timetable Modification Clearance</div>
+            <p class="instruction-text">Optional: Enter Modify Key to unlock editing privileges (move, swap, or cancel classes).</p>
+            <div class="form-row">
+                <input type="text" id="inputModKey" placeholder="Enter Modify Key...">
+                <button class="btn btn-share" id="btnVerifyKey">Unlock</button>
+            </div>
+            <p id="keyStatus" class="note gap-top"></p>
+        </section>
+
+        <section class="panel hidden" id="rosterPanel">
+            <div class="panel-title">👥 Faculty Roster Filter</div>
+            <div id="lecNames" class="roster-grid gap-top"></div>
+        </section>
+
+        <section class="panel hidden" id="schedulePanel">
+            <div class="panel-title" id="scheduleTitle">📋 Personal Lecture Schedule</div>
+            <div class="timetable-grid">
+                <table id="lecturerTimetableTable"></table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="lecturer.js"></script>
+</body>
+</html>

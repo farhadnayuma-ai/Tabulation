@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: grey;
+  color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+
+
+.hidden {
+  display: none !important;
+}
+
+.gap-top {
+  margin-top: 15px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.panel,
+.app-header {
+  background: white;
+  border: 1px solid silver;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: darkslategrey;
+}
+
+.navigation-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: slategrey;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: whitesmoke;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.nav-btn:hover {
+  background-color: silver;
+  color: darkslategrey;
+}
+
+.panel {
+  padding: 25px;
+}
+
+.panel-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: darkslategrey;
+  margin-bottom: 20px;
+  border-bottom: 2px solid whitesmoke;
+  padding-bottom: 8px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid silver;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  color: darkslategrey;
+}
+
+input:focus {
+  border-color: mediumpurple;
+  outline: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.form-row input {
+  flex: 3;
+}
+
+.form-row button {
+  flex: 1;
+}
+
+.btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-share {
+  background-color: mediumpurple;
+  color: white;
+}
+
+.btn-share:hover {
+  background-color: rebeccapurple;
+}
+
+.roster-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lec-chip {
+  background-color: whitesmoke;
+  color: slategrey;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid silver;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lec-chip:hover {
+  background-color: silver;
+  color: darkslategrey;
+}
+
+.lec-chip.active {
+  background-color: mediumpurple;
+  color: white;
+  border-color: rebeccapurple;
+  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
+}
+
+.timetable-grid {
+  overflow-x: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 1px solid silver;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  text-align: left;
+}
+
+th, 
+td {
+  padding: 14px;
+  border: 1px solid silver;
+  font-size: 13px;
+  vertical-align: top;
+  min-width: 150px;
+}
+
+th {
+  background-color: whitesmoke;
+  color: slategrey;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: snow;
+}
+
+.note {
+  font-size: 13px;
+  color: slategrey;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.instruction-text {
+  font-size: 14px;
+  color: slategrey;
+  margin-bottom: 5px;
+}
+

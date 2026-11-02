@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabulation – Student Portal</title>
+    <link rel="stylesheet" href="student.css">
+</head>
+<body>
+   
+   <div class="app-container">
+    <header class="app-header">
+        <div class="logo">🎓 Tabulation – Student & Public Portal</div>
+        <div class="navigation-links">
+            <a href="tabhome.html" class="nav-btn">⬅ Back to Home</a>
+            <a href="admin.html" class="nav-btn">🛡️ Admin Hub</a>
+            <a href="lecturer.html" class="nav-btn">👩‍🏫 Lecturer Portal</a>
+        </div>
+    </header>
+
+    <main class="stack">
+        <section class="panel">
+            <div class="panel-title">🎫 Enter Public Access Pass</div>
+            <div class="form-row">
+                <input type="text" id="inputAccessPass" placeholder="Paste Public Access Pass here...">
+                <button class="btn btn-primary" id="btnLoadPass">Load Timetable</button>
+            </div>
+        </section>
+
+        <section class="panel" id="classMetadataPanel">
+            <div class="panel-title">📌 Currently Displaying Class Profile</div>
+            <div class="form-row metadata-banner">
+                <div><strong>Program:</strong> <span id="lblProgram">All Groups</span></div>
+                <div><strong>Year:</strong> <span id="lblYear">Mixed</span></div>
+                <div><strong>Semester:</strong> <span id="lblSemester">Mixed</span></div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-title">🔍 Filter Options</div>
+            <div class="form-row filter-grid">
+                <div>
+                    <label for="filterProg">Program:</label>
+                    <select id="filterProg">
+                        <option value="">-- All Programs --</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="filterYear">Year:</label>
+                    <select id="filterYear">
+                        <option value="">-- All Years --</option>
+                        <option value="1">Year 1</option>
+                        <option value="2">Year 2</option>
+                        <option value="3">Year 3</option>
+                        <option value="4">Year 4</option>
+                        <option value="5">Year 5</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="filterSem">Semester:</label>
+                    <select id="filterSem">
+                        <option value="">-- All Semesters --</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="stuPanel" class="gap-top">
+                <div class="timetable-grid">
+                    <table id="studentTimetableTable"></table>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="student.js"></script>
+</body>
+</html>
